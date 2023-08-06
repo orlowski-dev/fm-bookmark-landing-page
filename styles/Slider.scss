@@ -1,0 +1,141 @@
+.slider-section {
+  .slider-scene {
+    display: grid;
+    column-gap: 580px;
+    transition: transform var(--transition-time);
+  }
+
+  .slider-controls {
+    margin-bottom: calc(var(--padding-v) * 2);
+
+    li {
+      display: block;
+      padding: 20px;
+      text-align: center;
+      font-size: 1rem;
+      color: var(--grayish-blue);
+      transition: color var(--transition-time);
+      line-height: 1.0625rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        bottom: 0;
+        width: 142px;
+        height: 4px;
+        left: calc(50% - 71px);
+        position: absolute;
+      }
+
+      &.active {
+        color: var(--very-dark-blue);
+
+        &::after {
+          background-color: var(--soft-red);
+        }
+      }
+    }
+  }
+
+  .slide {
+
+    .illustration {
+      grid-area: illArea;
+      height: 238px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      max-width: 375px;
+      margin: 0 auto;
+      margin-bottom: var(--padding-v);
+
+      img {
+        max-height: 201px;
+        width: auto;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 80px;
+        background-color: var(--soft-blue);
+        height: 203px;
+        width: 580px;
+        border-radius: 200px;
+        z-index: -1;
+      }
+    }
+
+    .content {
+      grid-area: contentArea;
+
+      .button-area {
+        margin-top: var(--padding-h);
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 786px) {
+  .slider-section {
+    .slider-scene {
+      column-gap: 800px;
+    }
+
+    .slider-controls {
+      max-width: 730px;
+      margin: 0 auto calc(var(--padding-v) * 2);
+
+      ul {
+        display: grid;
+        border-bottom: 1px solid var(--soft-gray);
+
+        li {
+          display: inline-block;
+          border: none;
+          padding: 36px;
+
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+
+    .slide {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "illArea contentArea";
+      gap: calc(var(--padding-v) * 2);
+
+      .illustration {
+        justify-content: flex-end;
+        max-width: unset;
+        margin: unset;
+        height: 435px;
+
+        img {
+          max-height: 346px;
+        }
+
+        &::before {
+          height: 352px;
+          width: 800px;
+        }
+      }
+
+      .content {
+        margin-top: var(--padding-v);
+
+        h3,
+        p,
+        .button-area {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
