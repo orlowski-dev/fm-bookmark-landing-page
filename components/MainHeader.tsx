@@ -1,10 +1,10 @@
-import { logo } from '@/assets/logos'
+import { logo, logoWhite } from '@/assets/logos'
 import { default as navLinksData } from '@/data/navLinksData.json'
 import '@/styles/MainHeader.scss'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Button } from './Buttons'
-import { hamburgerIcon } from '@/assets/icons'
+import { Button, LinkButton } from './Buttons'
+import { closeIcon, facebookIcon, hamburgerIcon, twitterIcon } from '@/assets/icons'
 
 export const MainHeader = () => {
 
@@ -26,16 +26,53 @@ export const MainHeader = () => {
           </ul>
         </nav>
         <nav id="mobile-nav" className="mobile mobile-nav">
+          <header className='d-fl ai-c jc-sb'>
+            <Image src={logoWhite} width={149} height={25} alt='logo' />
+            <Button
+              textContent='close menu'
+              onlyIcon
+              icon={{
+                path: closeIcon,
+                width: 15,
+                height: 15,
+                alt: 'close icon'
+              }}
+              classList={['no-bg-br', 'iconic']}
+            />
+          </header>
           <div className="nav-links">
             <ul className="us-ul">
               {
                 navLinksData.map(link => (
-                  <li key={link.id}>
+                  <li key={link.id} className='li-border-h'>
                     <Link href={link.path}>{link.textContent}</Link>
                   </li>
                 ))
               }
             </ul>
+            <div className="button-area">
+              <LinkButton
+                textContent='Login'
+                href='/'
+                classList={['button', 'nav-login-btn']}
+              />
+            </div>
+          </div>
+          <div className="social-media-links">
+            <LinkButton
+              textContent='Facebook'
+              href='/'
+              onlyIcon
+              icon={{ path: facebookIcon, alt: 'facebook icon' }}
+              target='_blank'
+            />
+            <LinkButton
+              textContent='Twitter'
+              href='/'
+              onlyIcon
+              icon={{ path: twitterIcon, alt: 'twitter icon' }}
+              target='_blank'
+            />
           </div>
         </nav>
         <div className="button-area">

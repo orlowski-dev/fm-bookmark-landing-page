@@ -1,18 +1,30 @@
 button {
   cursor: pointer;
+
+  &.no-bg-br {
+    background: none;
+    border: none;
+  }
+
 }
 
-.no-bg-br {
-  background: none;
-  border: none;
+.button {
+  font-size: .8125rem;
+  border: 2px solid transparent;
+  transition: background-color var(--transition-time), color var(--transition-time), border-color var(--transition-time);
+  display: inline-block;
+  padding: 12px;
+  border-radius: 5px;
 
-  &.iconic {
-    img {
-      transition: transform var(--transition-time);
-    }
+  &.sh {
+    box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.20);
+  }
 
-    &:active {
-      transform: scale(.8);
-    }
+  &.nav-login-btn {
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    padding: 16px;
+    border-color: white;
   }
 }
