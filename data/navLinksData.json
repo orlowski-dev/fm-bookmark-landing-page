@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "textContent": "Features",
+    "path": "/"
+  },
+  {
+    "id": 1,
+    "textContent": "Pricing",
+    "path": "/"
+  },
+  {
+    "id": 2,
+    "textContent": "Contact",
+    "path": "/"
+  }
+]
