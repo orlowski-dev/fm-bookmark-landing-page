@@ -14,7 +14,7 @@ interface IButtonPropsTypes {
     height?: number,
   }
   classList?: string[],
-  attrs?: React.HTMLAttributes<HTMLButtonElement>[]
+  attrs?: object
 }
 
 interface ILinkButtonPropsTypes extends IButtonPropsTypes {
