@@ -1,0 +1,18 @@
+button {
+  cursor: pointer;
+}
+
+.no-bg-br {
+  background: none;
+  border: none;
+
+  &.iconic {
+    img {
+      transition: transform var(--transition-time);
+    }
+
+    &:active {
+      transform: scale(.8);
+    }
+  }
+}

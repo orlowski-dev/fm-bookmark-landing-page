@@ -79,6 +79,32 @@ p {
   }
 }
 
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.us-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--soft-blue);
+}
+
+.p-h {
+  padding-left: var(--padding-h);
+  padding-right: var(--padding-h);
+}
+
+.p-v {
+  padding-top: var(--padding-v);
+  padding-bottom: var(--padding-v);
+}
+
 .desktop {
   display: none;
 }
