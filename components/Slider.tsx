@@ -57,7 +57,7 @@ export const Slider = () => {
     <section className="slider-section">
       <h2 className="visually-hidden">Slider</h2>
       <div className="slider-controls">
-        <ul className="us-ul">
+        <ul className="us-ul" style={{ gridTemplateColumns: `repeat(${slidesTitles.length}, 1fr)` }}>
           {slidesTitles}
         </ul>
       </div>

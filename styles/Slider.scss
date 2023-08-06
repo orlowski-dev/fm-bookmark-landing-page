@@ -85,6 +85,26 @@
       column-gap: 800px;
     }
 
+    .slider-controls {
+      max-width: 730px;
+      margin: 0 auto calc(var(--padding-v) * 2);
+
+      ul {
+        display: grid;
+        border-bottom: 1px solid var(--soft-gray);
+
+        li {
+          display: inline-block;
+          border: none;
+          padding: 36px;
+
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+
     .slide {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
