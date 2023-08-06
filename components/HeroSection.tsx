@@ -6,7 +6,7 @@ export const HeroSection = () => (
   <section className="hero-section">
     <div className="container p-h p-v">
       <div className="illustration">
-        <Image src={'/illustrations/illustration-features-tab-1.svg'} width={575} height={382} alt='hero illustration' />
+        <Image src={'/illustrations/illustration-hero.svg'} width={575} height={382} alt='hero illustration' />
       </div>
       <div className="content mw-540">
         <h1>A Simple Bookmark Manager</h1>
