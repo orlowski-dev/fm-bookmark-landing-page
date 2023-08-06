@@ -1,4 +1,4 @@
-import '@/styles/HeroSection.scss'
+import '@/styles/sections.scss'
 import { LinkButton } from './Buttons'
 import Image from 'next/image'
 

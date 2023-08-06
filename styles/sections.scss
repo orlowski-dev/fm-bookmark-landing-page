@@ -45,6 +45,16 @@
   }
 }
 
+.features-section {
+  overflow-x: hidden;
+  max-width: calc(1110px + 740px);
+  margin: 0 auto;
+
+  .slider-container {
+    margin-top: var(--padding-v);
+  }
+}
+
 @media screen and (min-width: 768px) {
   .hero-section {
     .container {
