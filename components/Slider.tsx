@@ -4,7 +4,7 @@ import '@/styles/Slider.scss'
 import { default as slidesData } from '@/data/slidesData.json'
 import Image from 'next/image'
 import { LinkButton } from './Buttons'
-import { useRef, useState } from 'react'
+import React, { Children, useEffect, useRef, useState } from 'react'
 
 interface ISlideData {
   id: number,
@@ -34,22 +34,25 @@ const Slide = (props: ISlideData) => (
 
 
 export const Slider = () => {
-  const handleSlideTitleClick = (index: number) => {
+  const handleSlideTitleClick = (index: number): string => {
     const columnGap = sliderRef.current && getComputedStyle(sliderRef.current).getPropertyValue('column-gap').replace('px', '') || 740
-
     return `translate3d(calc(-${index * columnGap}px - ${index * 100}%), 0,0)`
   }
+  const [currentSlide, setCurrentSlide] = useState(0)
   const slides = slidesData.map((slide: ISlideData) => <Slide key={slide.id} {...slide} />)
+  const sliderRef = useRef(null)
+  const [sliderTransform, setSliderTransform] = useState<string>(handleSlideTitleClick(0))
   const slidesTitles = slidesData.map((slide: ISlideData, index: number) => (
     <li
       key={slide.id}
+      className={`li-border-h ${currentSlide === index ? 'active' : ''}`}
       onClick={() => {
+        setCurrentSlide(index)
         setSliderTransform(handleSlideTitleClick(index))
       }}
-    >{slide.title}</li>
+    > {slide.title}</li >
   ))
-  const sliderRef = useRef(null)
-  const [sliderTransform, setSliderTransform] = useState<string>(handleSlideTitleClick(0))
+
   return (
     <section className="slider-section">
       <h2 className="visually-hidden">Slider</h2>

@@ -5,6 +5,38 @@
     transition: transform var(--transition-time);
   }
 
+  .slider-controls {
+    margin-bottom: calc(var(--padding-v) * 2);
+
+    li {
+      display: block;
+      padding: 20px;
+      text-align: center;
+      font-size: 1rem;
+      color: var(--grayish-blue);
+      transition: color var(--transition-time);
+      line-height: 1.0625rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        bottom: 0;
+        width: 142px;
+        height: 4px;
+        left: calc(50% - 71px);
+        position: absolute;
+      }
+
+      &.active {
+        color: var(--very-dark-blue);
+
+        &::after {
+          background-color: var(--soft-red);
+        }
+      }
+    }
+  }
+
   .slide {
 
     .illustration {
