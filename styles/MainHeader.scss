@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 95%);
+  background-color: rgba(255, 255, 255, 90%);
   backdrop-filter: blur(10px);
 }
 
@@ -40,6 +40,10 @@
     li {
       display: block;
       border-color: rgba(255, 255, 255, 15%);
+
+      &:last-child {
+        border-color: rgba(255, 255, 255, 15%);
+      }
     }
   }
 
@@ -47,5 +51,45 @@
     display: flex;
     justify-content: center;
     gap: 40px;
+  }
+}
+
+.desktop-nav {
+  align-items: center;
+  gap: 12px;
+  animation: var(--transition-time) fadeIn;
+
+  ul {
+    display: flex;
+
+    li a {
+      letter-spacing: .0938rem;
+      font-size: 13px;
+      padding: 4px 12px;
+      text-transform: uppercase;
+      color: var(--very-dark-blue);
+      transition: color var(--transition-time);
+
+      &:hover,
+      &:focus {
+        color: var(--soft-red);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

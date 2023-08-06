@@ -109,7 +109,10 @@ p {
     }
 
     &:last-child {
-      border-bottom: 1px solid var(--soft-gray);
+      &.li-border-h {
+        border-bottom: 1px solid var(--soft-gray);
+      }
+
     }
   }
 }

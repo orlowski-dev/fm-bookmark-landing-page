@@ -44,14 +44,21 @@ export const MainHeader = () => {
             <ul className="us-ul">
               {
                 navLinksData.map(link => (
-                  <li key={link.id}>
-                    <Link href={link.path}>d {link.textContent}</Link>
+                  <li
+                    key={link.id}
+                    className='li-desktop-nav'
+                  >
+                    <Link href={link.path}>{link.textContent}</Link>
                   </li>
                 ))
               }
             </ul>
+            <Button
+              textContent='Login'
+              classList={['button', 'red', 'sh', 'desktop-login-btn']}
+            />
           </nav>
-          <div className="button-area">
+          <div className="mobile button-area">
             <Button
               textContent='open menu'
               onlyIcon
@@ -62,7 +69,7 @@ export const MainHeader = () => {
                 alt: 'menu icon'
               }}
               classList={['no-bg-br', 'iconic']}
-              attrs={{ onClick: handleNavBtnClick }}
+              attrs={{ "onClick": handleNavBtnClick }}
             />
           </div>
         </div>
@@ -102,7 +109,7 @@ export const MainHeader = () => {
               textContent='Login'
               href='/'
               attrs={{ onClick: hideMobileMenu }}
-              classList={['button', 'nav-login-btn']}
+              classList={['button', 'mobile-login-btn']}
             />
           </div>
         </div>
