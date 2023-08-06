@@ -34,24 +34,36 @@ const Slide = (props: ISlideData) => (
 
 
 export const Slider = () => {
-  const handleSlideTitleClick = (index: number): string => {
+  const generateSliderSceneTransform = (index: number): string => {
     const columnGap = sliderRef.current && getComputedStyle(sliderRef.current).getPropertyValue('column-gap').replace('px', '') || 740
     return `translate3d(calc(-${index * columnGap}px - ${index * 100}%), 0,0)`
   }
   const [currentSlide, setCurrentSlide] = useState(0)
   const slides = slidesData.map((slide: ISlideData) => <Slide key={slide.id} {...slide} />)
   const sliderRef = useRef(null)
-  const [sliderTransform, setSliderTransform] = useState<string>(handleSlideTitleClick(0))
+  const [sliderTransform, setSliderTransform] = useState<string>(generateSliderSceneTransform(0))
   const slidesTitles = slidesData.map((slide: ISlideData, index: number) => (
     <li
       key={slide.id}
       className={`li-border-h ${currentSlide === index ? 'active' : ''}`}
       onClick={() => {
         setCurrentSlide(index)
-        setSliderTransform(handleSlideTitleClick(index))
+        setSliderTransform(generateSliderSceneTransform(index))
       }}
     > {slide.title}</li >
   ))
+
+  // correct slider-scene transform on window resize
+  useEffect(() => {
+    const onResize = () => {
+      setSliderTransform(generateSliderSceneTransform(currentSlide))
+    }
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      window.removeEventListener('resize', onResize)
+    }
+  })
 
   return (
     <section className="slider-section">
