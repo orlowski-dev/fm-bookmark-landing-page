@@ -17,10 +17,10 @@
   gap: var(--padding-h);
   right: -100%;
   top: 0;
-  transition: right var(--transition-time);
+  transition: transform var(--transition-time);
 
   &.visible {
-    right: 0;
+    transform: translate3d(-100%, 0, 0);
   }
 
   .nav-links {

@@ -11,16 +11,21 @@ import { useRef } from 'react'
 
 export const MainHeader = () => {
   let isNavVisible = false;
-  const mobileNavRef = useRef<HTMLElement>(null)
+  const refs = {
+    mobileNavRef: useRef<HTMLElement>(null),
+    openMenuBtnRef: useRef<HTMLButtonElement>(null)
+  }
 
   const showMobileMenu = () => {
-    mobileNavRef.current?.classList.add('visible')
+    refs.mobileNavRef.current?.classList.add('visible')
+    refs.openMenuBtnRef.current?.setAttribute('aria-expanded', 'true')
     document.body.classList.add('prevent-scroll')
     isNavVisible = true
   }
 
   const hideMobileMenu = () => {
-    mobileNavRef.current?.classList.remove('visible')
+    refs.mobileNavRef.current?.classList.remove('visible')
+    refs.openMenuBtnRef.current?.removeAttribute('aria-expanded')
     document.body.removeAttribute('class')
     isNavVisible = false
   }
@@ -69,12 +74,17 @@ export const MainHeader = () => {
                 alt: 'menu icon'
               }}
               classList={['no-bg-br', 'iconic']}
-              attrs={{ "onClick": handleNavBtnClick }}
+              attrs={{
+                "onClick": handleNavBtnClick,
+                "aria-controls": "mobile-nav",
+                "aria-haspopup": "true",
+                "ref": refs.openMenuBtnRef
+              }}
             />
           </div>
         </div>
       </header>
-      <nav id="mobile-nav" className="mobile mobile-nav" ref={mobileNavRef}>
+      <nav id="mobile-nav" className="mobile mobile-nav" ref={refs.mobileNavRef}>
         <header className='d-fl ai-c jc-sb'>
           <Image src={logoWhite} width={149} height={25} alt='logo' />
           <Button
@@ -87,7 +97,10 @@ export const MainHeader = () => {
               alt: 'close icon'
             }}
             classList={['no-bg-br', 'iconic']}
-            attrs={{ onClick: handleNavBtnClick }}
+            attrs={{
+              onClick: handleNavBtnClick,
+              "aria-controls": "mobile-nav"
+            }}
           />
         </header>
         <div className="nav-links">
