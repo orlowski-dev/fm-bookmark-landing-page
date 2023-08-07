@@ -4,7 +4,7 @@ import '@/styles/Slider.scss'
 import { default as slidesData } from '@/data/slidesData.json'
 import Image from 'next/image'
 import { LinkButton } from './Buttons'
-import React, { Children, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 interface ISlideData {
   id: number,
