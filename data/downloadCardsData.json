@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "icon": "/download-cards/logo-chrome.svg",
+    "headline": "Add to Chrome",
+    "minVersion": 62,
+    "link": "/"
+  },
+  {
+    "id": 1,
+    "icon": "/download-cards/logo-firefox.svg",
+    "headline": "Add to Firefox",
+    "minVersion": 56,
+    "link": "/"
+  },
+  {
+    "id": 2,
+    "icon": "/download-cards/logo-opera.svg",
+    "headline": "Add to Opera",
+    "minVersion": 46,
+    "link": "/"
+  }
+]
