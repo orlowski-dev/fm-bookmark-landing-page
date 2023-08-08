@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,500&display=swap');
 
 :root {
   font-synthesis: none;
@@ -30,6 +30,12 @@ body {
   padding: 0;
   background-color: var(--bg-color);
   color: var(--very-dark-blue);
+}
+
+input,
+button,
+a {
+  outline: none !important;
 }
 
 button,
