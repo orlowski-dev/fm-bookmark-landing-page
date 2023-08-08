@@ -6,7 +6,7 @@ import React, { useRef } from 'react'
 export const NewsletterSection = () => {
   const inputContainer = useRef<HTMLDivElement>(null)
   const emailInputRef = useRef<HTMLInputElement>(null)
-  const validRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+  const validRegex = RegExp('/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/')
   const validateForm = (): boolean => {
     if (!emailInputRef.current) return false
 
