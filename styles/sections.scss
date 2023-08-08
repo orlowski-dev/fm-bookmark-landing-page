@@ -102,6 +102,51 @@
   }
 }
 
+.faq-section {
+  margin-top: calc(var(--padding-v) * 2);
+
+  .qna {
+    margin-top: calc(var(--padding-v) * 2);
+  }
+
+  .qna-article {
+
+    border-top: 1px solid var(--soft-gray);
+
+    &:hover {
+      h4 {
+        color: var(--soft-red);
+      }
+    }
+
+    &:last-child {
+      border-bottom: 1px solid var(--soft-gray);
+    }
+
+    &.p-visible {
+      p {
+        display: inline-block;
+      }
+
+      img {
+        transform: rotate(180deg);
+      }
+    }
+
+    h4,
+    p {
+      font-size: .9375rem;
+      font-weight: 400;
+      text-align: left;
+      transition: color var(--transition-time);
+    }
+
+    p {
+      display: none;
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   .hero-section {
     .container {
@@ -142,6 +187,7 @@
 
   .download-section {
     max-width: 912px;
+    margin: 0 auto;
 
     .cards {
       grid-template-columns: repeat(3, 1fr);

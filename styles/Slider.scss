@@ -117,9 +117,13 @@
         max-width: unset;
         margin: unset;
         height: 435px;
+        position: relative;
 
         img {
           max-height: 346px;
+          position: absolute;
+          top: 0;
+          right: 0;
         }
 
         &::before {
