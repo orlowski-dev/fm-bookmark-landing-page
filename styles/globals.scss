@@ -137,6 +137,20 @@ p {
       }
 
     }
+
+    &.link-upp a {
+      letter-spacing: .0938rem;
+      font-size: 13px;
+      padding: 4px 12px;
+      text-transform: uppercase;
+      color: var(--very-dark-blue);
+      transition: color var(--transition-time);
+
+      &:hover,
+      &:focus {
+        color: var(--soft-red);
+      }
+    }
   }
 }
 

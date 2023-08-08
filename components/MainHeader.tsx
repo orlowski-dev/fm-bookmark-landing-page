@@ -51,7 +51,7 @@ export const MainHeader = () => {
                 navLinksData.map(link => (
                   <li
                     key={link.id}
-                    className='li-desktop-nav'
+                    className='link-upp'
                   >
                     <Link href={link.path}>{link.textContent}</Link>
                   </li>
