@@ -27,14 +27,14 @@ export const NewsletterSection = () => {
       <div className="container p-v p-h">
         <div className="content mw-540 block-c">
           <h3>35.000+ Already joined</h3>
-          <h2>Stay up-to-date with what we're doing</h2>
+          <h2>Stay up-to-date with what we`re doing</h2>
           <form onSubmit={formSubmit}>
             <div className="custom-input" ref={inputContainer}>
               <label>
                 <span className="visually-hidden">Email:</span>
                 <input type="email" name="email" ref={emailInputRef} placeholder='Enter your email address' />
               </label>
-              <span className="error">Whoops, make sure it's an email</span>
+              <span className="error">Whoops, make sure it`s an email</span>
             </div>
             <div className="button-area">
               <Button textContent='Contact Us' classList={['button', 'sh', 'red']} />
